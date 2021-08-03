@@ -2,17 +2,18 @@
   display: flex;
 }
 
-.about-list-item:not(:last-child) {
-  margin-right: 30px;
+.about-list-item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .about-list-title {
   width: 270px;
   margin-bottom: 10px;
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
+  @include font($fw: 700);
+
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -20,8 +21,8 @@
 .about-list-text {
   width: 270px;
 
-  font-size: 14px;
-  line-height: 1.71;
+  @include font($lh: 24px);
+
   letter-spacing: 0.03em;
   color: var(--text-color);
 }
