@@ -6,16 +6,18 @@
   display: flex;
 }
 
-.work-list-item:not(:last-child) {
-  margin-right: 30px;
+.work-list-item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  &:hover .overlay-work {
+    transform: translate(0, calc(294px - (100%)));
+  }
 }
 
 .subtitle {
   margin-bottom: 50px;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
+  @include font(36px, 700, 42px);
   text-align: center;
   letter-spacing: 0.03em;
 }
@@ -24,8 +26,8 @@
   padding-top: 27px;
   padding-bottom: 27px;
 
-  font-weight: bold;
-  line-height: 16px;
+  @include font($fw: 700);
+
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -50,8 +52,4 @@
 
   transform: translate(0, 294px);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.work-list-item:hover .overlay-work {
-  transform: translate(0, calc(294px - (100%)));
 }
